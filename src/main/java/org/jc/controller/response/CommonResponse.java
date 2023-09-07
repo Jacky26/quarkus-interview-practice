@@ -1,6 +1,8 @@
 package org.jc.controller.response;
 
-public class CommonResponse <T>{
+import java.io.Serializable;
+
+public class CommonResponse <T> implements Serializable {
     private String status;
     private T data;
 
