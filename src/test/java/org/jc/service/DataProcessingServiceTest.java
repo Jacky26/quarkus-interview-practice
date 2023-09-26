@@ -27,27 +27,6 @@ class DataProcessingServiceTest {
         customerList.add(buildCustomerModel("005","Reece James","IC" ,"123", "1999/04/19"));
     }
 
-    @Test
-    void isDuplicate_WhenCriteriaNotMoreThan2_ShouldReturnFalse(){
-        //001 & 002
-        boolean isMatch = dataProcessingService.isDuplicate(customerList.get(0), customerList.get(1));
-        assertFalse(isMatch);
-    }
-
-    @Test
-    void isDuplicate_WhenCriteriaMoreThan2_ShouldReturnTrue(){
-        //002 & 003
-        boolean idNoAndDobMatch = dataProcessingService.isDuplicate(customerList.get(1), customerList.get(2));
-        assertTrue(idNoAndDobMatch);
-
-        //001 & 004
-        boolean nameAndDobMatch = dataProcessingService.isDuplicate(customerList.get(0), customerList.get(3));
-        assertTrue(nameAndDobMatch);
-
-        //001 & 005
-        boolean nameAndIdNoMatch = dataProcessingService.isDuplicate(customerList.get(1), customerList.get(4));
-        assertTrue(nameAndIdNoMatch);
-    }
 
     @Test
     void convertDataToList_WhenHasData_ShouldReturnCustomerList(){

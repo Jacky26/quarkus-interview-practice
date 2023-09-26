@@ -12,7 +12,7 @@ import static org.jc.util.Constant.MAX_MATCH_COUNT;
 @ApplicationScoped
 public class DataProcessingService {
 
-    public boolean isDuplicate(Customer customer1, Customer customer2){
+    private boolean isDuplicate(Customer customer1, Customer customer2){
         int matchCount = 0;
 
         for(Enums.CustomerMatchingCriteria customerMatchingCriteria : Enums.CustomerMatchingCriteria.values()){

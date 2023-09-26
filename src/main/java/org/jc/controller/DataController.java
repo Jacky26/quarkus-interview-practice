@@ -43,7 +43,7 @@ public class DataController {
         }catch(CustomException e){
             jsonResp.setStatus(String.valueOf(Response.Status.BAD_REQUEST.getStatusCode()));
             jsonResp.setData(e.getMessage());
-            logger.error("Failed to get data. Response={},", ObjectMappingHelper.toJsonString(jsonResp));
+            logger.error("Failed to get data. ErrorCode=[{}], message=[{}]", e.getErrorCode().getCode(), e.getMessage());
             return Response.accepted(jsonResp).build();
         }
     }
@@ -65,7 +65,7 @@ public class DataController {
         }catch(CustomException e){
             jsonResp.setStatus(String.valueOf(Response.Status.BAD_REQUEST.getStatusCode()));
             jsonResp.setData(e.getMessage());
-            logger.error("Failed to get data. Response={},", ObjectMappingHelper.toJsonString(jsonResp));
+            logger.error("Failed to get data. ErrorCode=[{}], message=[{}]", e.getErrorCode().getCode(), e.getMessage());
             return Response.accepted(jsonResp).build();
         }
     }
